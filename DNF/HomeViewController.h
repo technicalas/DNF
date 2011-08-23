@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  HomeViewController.h
 //  DNF
 //
 //  Created by Daniel Rueda Jimenez on 22/08/11.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface HomeViewController : UIViewController
 
 @end

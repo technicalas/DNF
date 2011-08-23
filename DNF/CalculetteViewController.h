@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  CalculetteViewController.h
 //  DNF
 //
 //  Created by Daniel Rueda Jimenez on 22/08/11.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface CalculetteViewController : UIViewController
 
 @end

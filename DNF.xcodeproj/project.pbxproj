@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B77DF191403465F00DB97D9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B77DF171403465F00DB97D9 /* HomeViewController.m */; };
+		4B77DF1A1403465F00DB97D9 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B77DF181403465F00DB97D9 /* HomeView.xib */; };
+		4B77DF1E140346FF00DB97D9 /* DonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B77DF1C140346FF00DB97D9 /* DonsViewController.m */; };
+		4B77DF1F140346FF00DB97D9 /* DonsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B77DF1D140346FF00DB97D9 /* DonsView.xib */; };
+		4B77DF231403471700DB97D9 /* GeolocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B77DF211403471700DB97D9 /* GeolocViewController.m */; };
+		4B77DF241403471700DB97D9 /* GeolocView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B77DF221403471700DB97D9 /* GeolocView.xib */; };
+		4B77DF281403473000DB97D9 /* CalculetteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B77DF261403473000DB97D9 /* CalculetteViewController.m */; };
+		4B77DF291403473000DB97D9 /* CalculetteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B77DF271403473000DB97D9 /* CalculetteView.xib */; };
 		4B9D6CF114032F8C0042D474 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9D6CF014032F8C0042D474 /* UIKit.framework */; };
 		4B9D6CF314032F8C0042D474 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9D6CF214032F8C0042D474 /* Foundation.framework */; };
 		4B9D6CF514032F8C0042D474 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9D6CF414032F8C0042D474 /* CoreGraphics.framework */; };
@@ -14,13 +22,21 @@
 		4B9D6CFD14032F8C0042D474 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9D6CFC14032F8C0042D474 /* main.m */; };
 		4B9D6D0114032F8C0042D474 /* DNFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9D6D0014032F8C0042D474 /* DNFAppDelegate.m */; };
 		4B9D6D0414032F8C0042D474 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B9D6D0214032F8C0042D474 /* MainWindow.xib */; };
-		4B9D6D0714032F8C0042D474 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9D6D0614032F8C0042D474 /* FirstViewController.m */; };
-		4B9D6D0A14032F8C0042D474 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9D6D0914032F8C0042D474 /* SecondViewController.m */; };
-		4B9D6D0D14032F8C0042D474 /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B9D6D0B14032F8C0042D474 /* FirstView.xib */; };
-		4B9D6D1014032F8C0042D474 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B9D6D0E14032F8C0042D474 /* SecondView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B77DF161403465F00DB97D9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		4B77DF171403465F00DB97D9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		4B77DF181403465F00DB97D9 /* HomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
+		4B77DF1B140346FF00DB97D9 /* DonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DonsViewController.h; sourceTree = "<group>"; };
+		4B77DF1C140346FF00DB97D9 /* DonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DonsViewController.m; sourceTree = "<group>"; };
+		4B77DF1D140346FF00DB97D9 /* DonsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DonsView.xib; sourceTree = "<group>"; };
+		4B77DF201403471700DB97D9 /* GeolocViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeolocViewController.h; sourceTree = "<group>"; };
+		4B77DF211403471700DB97D9 /* GeolocViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeolocViewController.m; sourceTree = "<group>"; };
+		4B77DF221403471700DB97D9 /* GeolocView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeolocView.xib; sourceTree = "<group>"; };
+		4B77DF251403473000DB97D9 /* CalculetteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculetteViewController.h; sourceTree = "<group>"; };
+		4B77DF261403473000DB97D9 /* CalculetteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculetteViewController.m; sourceTree = "<group>"; };
+		4B77DF271403473000DB97D9 /* CalculetteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalculetteView.xib; sourceTree = "<group>"; };
 		4B9D6CEC14032F8C0042D474 /* DNF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9D6CF014032F8C0042D474 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4B9D6CF214032F8C0042D474 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -32,12 +48,6 @@
 		4B9D6CFF14032F8C0042D474 /* DNFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNFAppDelegate.h; sourceTree = "<group>"; };
 		4B9D6D0014032F8C0042D474 /* DNFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNFAppDelegate.m; sourceTree = "<group>"; };
 		4B9D6D0314032F8C0042D474 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		4B9D6D0514032F8C0042D474 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		4B9D6D0614032F8C0042D474 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		4B9D6D0814032F8C0042D474 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		4B9D6D0914032F8C0042D474 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		4B9D6D0C14032F8C0042D474 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstView.xib; sourceTree = "<group>"; };
-		4B9D6D0F14032F8C0042D474 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B77DF1414033EEF00DB97D9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4B77DF161403465F00DB97D9 /* HomeViewController.h */,
+				4B77DF171403465F00DB97D9 /* HomeViewController.m */,
+				4B77DF181403465F00DB97D9 /* HomeView.xib */,
+				4B77DF1B140346FF00DB97D9 /* DonsViewController.h */,
+				4B77DF1C140346FF00DB97D9 /* DonsViewController.m */,
+				4B77DF1D140346FF00DB97D9 /* DonsView.xib */,
+				4B77DF201403471700DB97D9 /* GeolocViewController.h */,
+				4B77DF211403471700DB97D9 /* GeolocViewController.m */,
+				4B77DF221403471700DB97D9 /* GeolocView.xib */,
+				4B77DF251403473000DB97D9 /* CalculetteViewController.h */,
+				4B77DF261403473000DB97D9 /* CalculetteViewController.m */,
+				4B77DF271403473000DB97D9 /* CalculetteView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		4B9D6CE114032F8C0042D474 = {
 			isa = PBXGroup;
 			children = (
@@ -84,15 +113,10 @@
 		4B9D6CF614032F8C0042D474 /* DNF */ = {
 			isa = PBXGroup;
 			children = (
+				4B77DF1414033EEF00DB97D9 /* Views */,
 				4B9D6CFF14032F8C0042D474 /* DNFAppDelegate.h */,
 				4B9D6D0014032F8C0042D474 /* DNFAppDelegate.m */,
 				4B9D6D0214032F8C0042D474 /* MainWindow.xib */,
-				4B9D6D0514032F8C0042D474 /* FirstViewController.h */,
-				4B9D6D0614032F8C0042D474 /* FirstViewController.m */,
-				4B9D6D0814032F8C0042D474 /* SecondViewController.h */,
-				4B9D6D0914032F8C0042D474 /* SecondViewController.m */,
-				4B9D6D0B14032F8C0042D474 /* FirstView.xib */,
-				4B9D6D0E14032F8C0042D474 /* SecondView.xib */,
 				4B9D6CF714032F8C0042D474 /* Supporting Files */,
 			);
 			path = DNF;
@@ -158,8 +182,10 @@
 			files = (
 				4B9D6CFB14032F8C0042D474 /* InfoPlist.strings in Resources */,
 				4B9D6D0414032F8C0042D474 /* MainWindow.xib in Resources */,
-				4B9D6D0D14032F8C0042D474 /* FirstView.xib in Resources */,
-				4B9D6D1014032F8C0042D474 /* SecondView.xib in Resources */,
+				4B77DF1A1403465F00DB97D9 /* HomeView.xib in Resources */,
+				4B77DF1F140346FF00DB97D9 /* DonsView.xib in Resources */,
+				4B77DF241403471700DB97D9 /* GeolocView.xib in Resources */,
+				4B77DF291403473000DB97D9 /* CalculetteView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,8 +198,10 @@
 			files = (
 				4B9D6CFD14032F8C0042D474 /* main.m in Sources */,
 				4B9D6D0114032F8C0042D474 /* DNFAppDelegate.m in Sources */,
-				4B9D6D0714032F8C0042D474 /* FirstViewController.m in Sources */,
-				4B9D6D0A14032F8C0042D474 /* SecondViewController.m in Sources */,
+				4B77DF191403465F00DB97D9 /* HomeViewController.m in Sources */,
+				4B77DF1E140346FF00DB97D9 /* DonsViewController.m in Sources */,
+				4B77DF231403471700DB97D9 /* GeolocViewController.m in Sources */,
+				4B77DF281403473000DB97D9 /* CalculetteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,22 +222,6 @@
 				4B9D6D0314032F8C0042D474 /* en */,
 			);
 			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		4B9D6D0B14032F8C0042D474 /* FirstView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4B9D6D0C14032F8C0042D474 /* en */,
-			);
-			name = FirstView.xib;
-			sourceTree = "<group>";
-		};
-		4B9D6D0E14032F8C0042D474 /* SecondView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4B9D6D0F14032F8C0042D474 /* en */,
-			);
-			name = SecondView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -234,7 +246,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -251,7 +263,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -299,6 +311,7 @@
 				4B9D6D1514032F8C0042D474 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
