@@ -22,6 +22,12 @@
 		4B9D6CFD14032F8C0042D474 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9D6CFC14032F8C0042D474 /* main.m */; };
 		4B9D6D0114032F8C0042D474 /* DNFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9D6D0014032F8C0042D474 /* DNFAppDelegate.m */; };
 		4B9D6D0414032F8C0042D474 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B9D6D0214032F8C0042D474 /* MainWindow.xib */; };
+		4BD3592B1405D7AD00E8EFE8 /* DonsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD359291405D7AD00E8EFE8 /* DonsWebViewController.m */; };
+		4BD3592C1405D7AD00E8EFE8 /* DonsWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD3592A1405D7AD00E8EFE8 /* DonsWebView.xib */; };
+		4BD359311405DB0300E8EFE8 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD3592F1405DB0300E8EFE8 /* InformationViewController.m */; };
+		4BD359321405DB0300E8EFE8 /* InformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD359301405DB0300E8EFE8 /* InformationView.xib */; };
+		4BD359361405DE0200E8EFE8 /* CoachViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD359341405DE0200E8EFE8 /* CoachViewController.m */; };
+		4BD359371405DE0200E8EFE8 /* CoachView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD359351405DE0200E8EFE8 /* CoachView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +54,15 @@
 		4B9D6CFF14032F8C0042D474 /* DNFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNFAppDelegate.h; sourceTree = "<group>"; };
 		4B9D6D0014032F8C0042D474 /* DNFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNFAppDelegate.m; sourceTree = "<group>"; };
 		4B9D6D0314032F8C0042D474 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		4BD359281405D7AD00E8EFE8 /* DonsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DonsWebViewController.h; sourceTree = "<group>"; };
+		4BD359291405D7AD00E8EFE8 /* DonsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DonsWebViewController.m; sourceTree = "<group>"; };
+		4BD3592A1405D7AD00E8EFE8 /* DonsWebView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DonsWebView.xib; sourceTree = "<group>"; };
+		4BD3592E1405DB0300E8EFE8 /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
+		4BD3592F1405DB0300E8EFE8 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
+		4BD359301405DB0300E8EFE8 /* InformationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationView.xib; sourceTree = "<group>"; };
+		4BD359331405DE0100E8EFE8 /* CoachViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoachViewController.h; sourceTree = "<group>"; };
+		4BD359341405DE0200E8EFE8 /* CoachViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoachViewController.m; sourceTree = "<group>"; };
+		4BD359351405DE0200E8EFE8 /* CoachView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoachView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +94,15 @@
 				4B77DF251403473000DB97D9 /* CalculetteViewController.h */,
 				4B77DF261403473000DB97D9 /* CalculetteViewController.m */,
 				4B77DF271403473000DB97D9 /* CalculetteView.xib */,
+				4BD359281405D7AD00E8EFE8 /* DonsWebViewController.h */,
+				4BD359291405D7AD00E8EFE8 /* DonsWebViewController.m */,
+				4BD3592A1405D7AD00E8EFE8 /* DonsWebView.xib */,
+				4BD3592E1405DB0300E8EFE8 /* InformationViewController.h */,
+				4BD3592F1405DB0300E8EFE8 /* InformationViewController.m */,
+				4BD359301405DB0300E8EFE8 /* InformationView.xib */,
+				4BD359331405DE0100E8EFE8 /* CoachViewController.h */,
+				4BD359341405DE0200E8EFE8 /* CoachViewController.m */,
+				4BD359351405DE0200E8EFE8 /* CoachView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -186,6 +210,9 @@
 				4B77DF1F140346FF00DB97D9 /* DonsView.xib in Resources */,
 				4B77DF241403471700DB97D9 /* GeolocView.xib in Resources */,
 				4B77DF291403473000DB97D9 /* CalculetteView.xib in Resources */,
+				4BD3592C1405D7AD00E8EFE8 /* DonsWebView.xib in Resources */,
+				4BD359321405DB0300E8EFE8 /* InformationView.xib in Resources */,
+				4BD359371405DE0200E8EFE8 /* CoachView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +229,9 @@
 				4B77DF1E140346FF00DB97D9 /* DonsViewController.m in Sources */,
 				4B77DF231403471700DB97D9 /* GeolocViewController.m in Sources */,
 				4B77DF281403473000DB97D9 /* CalculetteViewController.m in Sources */,
+				4BD3592B1405D7AD00E8EFE8 /* DonsWebViewController.m in Sources */,
+				4BD359311405DB0300E8EFE8 /* InformationViewController.m in Sources */,
+				4BD359361405DE0200E8EFE8 /* CoachViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

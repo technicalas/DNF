@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DonsViewController : UIViewController
+@interface DonsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+{
+    NSArray *options;
+}
 
 @end

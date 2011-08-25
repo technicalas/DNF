@@ -7,6 +7,7 @@
 //
 
 #import "DonsViewController.h"
+#import "DonsWebViewController.h"
 
 @implementation DonsViewController
 
@@ -29,23 +30,82 @@
 
 #pragma mark - View lifecycle
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = NO;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    options = [[NSArray alloc] initWithObjects:@"Ou vont vos dons", @"Je donne maintenant", nil];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    [options release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DonsWebViewController *detailsView = nil;
+    
+    switch (indexPath.row) {
+        case 0:
+            detailsView = [[DonsWebViewController alloc] initWithNibName:@"DonsWebView" bundle:nil];
+            detailsView.title = @"Google";
+            detailsView.pageURL = [NSURL URLWithString:@"http://www.google.com"];
+            [self.navigationController pushViewController:detailsView animated:YES];
+            break;
+        case 1:
+            detailsView = [[DonsWebViewController alloc] initWithNibName:@"DonsWebView" bundle:nil];
+            detailsView.title = @"Yahoo";
+            detailsView.pageURL = [NSURL URLWithString:@"http://www.yahoo.com"];
+            [self.navigationController pushViewController:detailsView animated:YES];
+            break;
+        default:
+            break;
+    }
+    [detailsView release];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [options count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellID = @"donsCellID";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        [cell autorelease];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    cell.textLabel.text = [options objectAtIndex:indexPath.row];
+    
+    return cell;
 }
 
 @end
