@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FBConnect.h"
 
-@interface CoachViewController : UIViewController
+@interface CoachViewController : UIViewController<FBSessionDelegate, FBRequestDelegate>
 {
+    Facebook *_facebook;
 }
+
+@property (nonatomic, assign) Facebook *facebook;
 
 @end

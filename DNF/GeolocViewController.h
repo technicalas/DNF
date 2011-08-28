@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GeolocViewController : UIViewController
+@interface GeolocViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+{
+    NSArray *options;
+}
 
 @end
