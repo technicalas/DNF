@@ -21,12 +21,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    // Add the tab bar controller's current view as a subview of the window
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     
-    self.facebook = [[Facebook alloc] initWithAppId:appIDFB andDelegate:nil];
+    Facebook *facebook = [[Facebook alloc] initWithAppId:appIDFB andDelegate:nil];
+    self.facebook = facebook;
+    [facebook release];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults objectForKey:FBAccessTokenKey] 

@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CalculetteViewController : UIViewController
+@interface CalculetteViewController : UIViewController<UITextFieldDelegate> {
+    UILabel *lblTotal;
+    UITextField *txtCigarettesPerJour;
+    UITextField *txtPaquetDesCigarettes;
+}
+
+@property (nonatomic, retain) IBOutlet UITextField *txtCigarettesPerJour;
+@property (nonatomic, retain) IBOutlet UITextField *txtPaquetDesCigarettes;
+@property (nonatomic, retain) IBOutlet UILabel *lblTotal;
 
 @end

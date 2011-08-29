@@ -15,5 +15,7 @@
 }
 
 @property (nonatomic, assign) Facebook *facebook;
+- (IBAction)publishOnFacebook:(id)sender;
+- (IBAction)activateFacebook:(id)sender;
 
 @end

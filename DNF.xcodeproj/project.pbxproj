@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B19C96D140B4A40000ABB8C /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B19C96C140B4A40000ABB8C /* TPKeyboardAvoidingScrollView.m */; };
+		4B19C971140B5250000ABB8C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B19C970140B5250000ABB8C /* Icon.png */; };
+		4B19C973140B58D8000ABB8C /* f_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B19C972140B58D8000ABB8C /* f_logo.png */; };
 		4B77DF191403465F00DB97D9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B77DF171403465F00DB97D9 /* HomeViewController.m */; };
 		4B77DF1A1403465F00DB97D9 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B77DF181403465F00DB97D9 /* HomeView.xib */; };
 		4B77DF1E140346FF00DB97D9 /* DonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B77DF1C140346FF00DB97D9 /* DonsViewController.m */; };
@@ -48,6 +51,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B19C96B140B4A40000ABB8C /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		4B19C96C140B4A40000ABB8C /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		4B19C970140B5250000ABB8C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		4B19C972140B58D8000ABB8C /* f_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f_logo.png; sourceTree = "<group>"; };
 		4B77DF161403465F00DB97D9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		4B77DF171403465F00DB97D9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		4B77DF181403465F00DB97D9 /* HomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
@@ -131,6 +138,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B19C969140B4A2A000ABB8C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4B19C96B140B4A40000ABB8C /* TPKeyboardAvoidingScrollView.h */,
+				4B19C96C140B4A40000ABB8C /* TPKeyboardAvoidingScrollView.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		4B77DF1414033EEF00DB97D9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +231,8 @@
 		4BB636CC140AAAD400F74774 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4B19C972140B58D8000ABB8C /* f_logo.png */,
+				4B19C970140B5250000ABB8C /* Icon.png */,
 				4BB636CE140AAAE600F74774 /* Logo_DNF.png */,
 			);
 			path = Resources;
@@ -223,6 +241,7 @@
 		4BFBBF121407228A00744AD0 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				4B19C969140B4A2A000ABB8C /* Helpers */,
 				4BFBBF241407234400744AD0 /* SBJSON */,
 				4BFBBF131407228A00744AD0 /* Facebook */,
 			);
@@ -334,6 +353,8 @@
 				4BD359371405DE0200E8EFE8 /* CoachView.xib in Resources */,
 				4BFBBF1F140722A900744AD0 /* FBDialog.bundle in Resources */,
 				4BB636CF140AAAE600F74774 /* Logo_DNF.png in Resources */,
+				4B19C971140B5250000ABB8C /* Icon.png in Resources */,
+				4B19C973140B58D8000ABB8C /* f_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +389,7 @@
 				4BFBBF441407237100744AD0 /* SBJsonTokeniser.m in Sources */,
 				4BFBBF451407237100744AD0 /* SBJsonUTF8Stream.m in Sources */,
 				4BFBBF461407237100744AD0 /* SBJsonWriter.m in Sources */,
+				4B19C96D140B4A40000ABB8C /* TPKeyboardAvoidingScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

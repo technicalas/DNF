@@ -9,6 +9,9 @@
 #import "CalculetteViewController.h"
 
 @implementation CalculetteViewController
+@synthesize txtCigarettesPerJour;
+@synthesize txtPaquetDesCigarettes;
+@synthesize lblTotal;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,8 +26,16 @@
 {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
+}
+
+- (void)calculateValues
+{
+    float a = [self.txtCigarettesPerJour.text floatValue];
+    float b = [self.txtPaquetDesCigarettes.text floatValue];
+    float c = a*b;
     
-    // Release any cached data, images, etc that aren't in use.
+    NSString *result = [NSString stringWithFormat:@"%.2f €", c];
+    lblTotal.text = result;
 }
 
 #pragma mark - View lifecycle
@@ -32,11 +43,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.txtPaquetDesCigarettes.keyboardType = UIKeyboardTypeDecimalPad;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(calculateValues)
+                                                 name:UIKeyboardDidHideNotification
+                                               object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidUnload
 {
+    [self setLblTotal:nil];
+    [self setTxtCigarettesPerJour:nil];
+    [self setTxtPaquetDesCigarettes:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -46,6 +75,13 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)dealloc {
+    [lblTotal release];
+    [txtCigarettesPerJour release];
+    [txtPaquetDesCigarettes release];
+    [super dealloc];
 }
 
 @end

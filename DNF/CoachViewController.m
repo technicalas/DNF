@@ -51,7 +51,7 @@
         [self.facebook requestWithGraphPath:@"me" andDelegate:self];
     }else{
         NSLog(@"Voy a intentar loguearme");
-        [_facebook authorize:permissions];
+        [self.facebook authorize:permissions];
     }
 }
 
@@ -135,4 +135,11 @@
     }
 }
 
+#pragma mark - Actions methods
+
+- (IBAction)publishOnFacebook:(id)sender {
+}
+
+- (IBAction)activateFacebook:(id)sender {
+}
 @end
