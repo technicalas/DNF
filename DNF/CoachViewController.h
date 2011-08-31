@@ -16,9 +16,14 @@
 @interface CoachViewController : UIViewController<FBSessionDelegate, FBRequestDelegate>
 {
     Facebook *_facebook;
+    UISwitch *switchFB;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+@property (nonatomic, retain) IBOutlet UISwitch *switchFB;
+>>>>>>> Added HUD
 @property (nonatomic, assign) Facebook *facebook;
 - (IBAction)publishOnFacebook:(id)sender;
 - (IBAction)activateFacebook:(id)sender;

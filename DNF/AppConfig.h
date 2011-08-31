@@ -11,3 +11,4 @@
 #define FBAccessTokenKey @"FBAccessTokenKey"
 #define FBExpirationDateKey @"FBExpirationDateKey"
 #define appIDFB @"247552555285262"
+#define FBUsernameKey @"IDUserFBKey"

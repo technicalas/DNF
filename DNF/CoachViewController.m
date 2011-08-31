@@ -8,9 +8,11 @@
 
 #import "CoachViewController.h"
 #import "DNFAppDelegate.h"
+#import "MBProgressHUD.h"
 #import "AppConfig.h"
 
 @implementation CoachViewController
+@synthesize switchFB;
 @synthesize facebook;
 
 
@@ -46,18 +48,20 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSArray *permissions = [NSArray arrayWithObjects:@"user_about_me", @"publish_stream", nil];
     if ([self.facebook isSessionValid]) {
         NSLog(@"Ya estoy logueado :P");
-        [self.facebook requestWithGraphPath:@"me" andDelegate:self];
+        [self.switchFB setOn:YES animated:NO];
     }else{
-        NSLog(@"Voy a intentar loguearme");
-        [self.facebook authorize:permissions];
+        NSLog(@"No estoy logueado");
+        [self.switchFB setOn:NO animated:NO];
+        //NSArray *permissions = [NSArray arrayWithObjects:@"user_about_me", @"publish_stream", nil];
+        //[self.facebook authorize:permissions];
     }
 }
 
 - (void)viewDidUnload
 {
+    [self setSwitchFB:nil];
     [super viewDidUnload];
     self.facebook.sessionDelegate = nil;
 }
@@ -80,6 +84,7 @@
     [defaults setObject:[self.facebook expirationDate] forKey:FBExpirationDateKey];
     [defaults synchronize];
     
+    [self.switchFB setOn:YES animated:YES];
     [self.facebook requestWithGraphPath:@"me" andDelegate:self];
 }
 
@@ -89,6 +94,7 @@
 - (void)fbDidNotLogin:(BOOL)cancelled
 {
     NSLog(@"Usuario no se logueo");
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 /**
@@ -114,6 +120,7 @@
 - (void)request:(FBRequest *)request didFailWithError:(NSError *)error
 {
     NSLog(@"Ha ocurrido un error :%@", error);
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 /**
@@ -134,6 +141,7 @@
     }else if ([result isKindOfClass:[NSNumber class]]) {
         NSLog(@"Recibi un NSNumber %@", (NSNumber *) result);
     }
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 #pragma mark - Actions methods
@@ -142,5 +150,17 @@
 }
 
 - (IBAction)activateFacebook:(id)sender {
+    UISwitch *aSwitch = (UISwitch*) sender;
+    if (aSwitch.on){
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        NSArray *permissions = [NSArray arrayWithObjects:@"user_about_me", @"publish_stream", nil];
+        [self.facebook authorize:permissions];
+    }else{
+        
+    }
+}
+- (void)dealloc {
+    [switchFB release];
+    [super dealloc];
 }
 @end
