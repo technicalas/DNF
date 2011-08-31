@@ -397,6 +397,7 @@
 				4B19C96D140B4A40000ABB8C /* TPKeyboardAvoidingScrollView.m in Sources */,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				6E722DCF1407163F00425396 /* Facebook.m in Sources */,
 				6E722DD11407163F00425396 /* FBDialog.m in Sources */,
@@ -412,6 +413,8 @@
 =======
 				4B5A9526140C7E3800954EE3 /* MBProgressHUD.m in Sources */,
 >>>>>>> Added HUD
+=======
+>>>>>>> parent of 1264b35... Commit Obligatorio que me pide
 =======
 >>>>>>> parent of 1264b35... Commit Obligatorio que me pide
 			);
