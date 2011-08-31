@@ -106,6 +106,7 @@
     cell.textLabel.text = [options objectAtIndex:indexPath.row];
     
     return cell;
+    
 }
 
 @end
