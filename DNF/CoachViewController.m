@@ -53,8 +53,6 @@
     }else{
         NSLog(@"No estoy logueado");
         [self.switchFB setOn:NO animated:NO];
-        //NSArray *permissions = [NSArray arrayWithObjects:@"user_about_me", @"publish_stream", nil];
-        //[self.facebook authorize:permissions];
     }
 }
 

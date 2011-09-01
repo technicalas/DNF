@@ -13,7 +13,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4B9D6CEB14032F8C0042D474"
+               BlueprintIdentifier = "4BFB3AEF140FD47D009283A6"
                BuildableName = "DNF.app"
                BlueprintName = "DNF"
                ReferencedContainer = "container:DNF.xcodeproj">
@@ -38,7 +38,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4B9D6CEB14032F8C0042D474"
+            BlueprintIdentifier = "4BFB3AEF140FD47D009283A6"
             BuildableName = "DNF.app"
             BlueprintName = "DNF"
             ReferencedContainer = "container:DNF.xcodeproj">
@@ -55,7 +55,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4B9D6CEB14032F8C0042D474"
+            BlueprintIdentifier = "4BFB3AEF140FD47D009283A6"
             BuildableName = "DNF.app"
             BlueprintName = "DNF"
             ReferencedContainer = "container:DNF.xcodeproj">
