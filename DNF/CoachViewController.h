@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FBConnect.h"
 
-@interface CoachViewController : UIViewController<FBSessionDelegate, FBRequestDelegate>
+@interface CoachViewController : UIViewController<UIAlertViewDelegate, FBSessionDelegate, FBRequestDelegate, FBDialogDelegate>
 {
     Facebook *_facebook;
     UISwitch *switchFB;

@@ -91,6 +91,7 @@
 - (void)fbDidNotLogin:(BOOL)cancelled
 {
     NSLog(@"Usuario no se logueo");
+    [self.switchFB setOn:NO animated:YES];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
@@ -100,6 +101,12 @@
 - (void)fbDidLogout
 {
     NSLog(@"Usuario deslogueado");
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:FBAccessTokenKey];
+    [defaults removeObjectForKey:FBExpirationDateKey];
+    [defaults synchronize];
+    
+    [self.switchFB setOn:NO animated:YES];
 }
 
 #pragma mark - FBRequestDelegate
@@ -144,6 +151,18 @@
 #pragma mark - Actions methods
 
 - (IBAction)publishOnFacebook:(id)sender {
+    if ([self.facebook isSessionValid]) {
+        NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       //appIDFB, @"app_id",
+                                       @"http://dnf.asso.fr/", @"link",
+                                       @"http://dnf.asso.fr/css/dnf.png", @"picture",
+                                       @"DNF", @"name",
+                                       @"Esta es la informacion que se publicara en FB?", @"caption",
+                                       @"Aplicacion DNF", @"description",
+                                       nil];
+        
+        [self.facebook dialog:@"feed" andParams:params andDelegate:self];
+    }
 }
 
 - (IBAction)activateFacebook:(id)sender {
@@ -153,11 +172,30 @@
         NSArray *permissions = [NSArray arrayWithObjects:@"user_about_me", @"publish_stream", nil];
         [self.facebook authorize:permissions];
     }else{
-        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alerta" message:@"¿Esta seguro que desea cerrar la cuenta de Facebook?" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Aceptar", nil];
+        [alert show];
+        [alert release];
     }
 }
+
 - (void)dealloc {
     [switchFB release];
     [super dealloc];
 }
+
+#pragma mark - UIAlertViewDelegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0: // Cancel
+            [self.switchFB setOn:YES animated:NO];
+            break;
+        case 1: // OK
+            [self.facebook logout:self];
+            break;
+        default:
+            break;
+    }
+}
+
 @end

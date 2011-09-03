@@ -228,13 +228,14 @@
 								<string key="NSFrame">{{20, 369}, {280, 29}}</string>
 								<reference key="NSSuperview" ref="631876547"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:311</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">1,500.00 €</string>
+								<string key="IBUIText">0.00 €</string>
 								<object class="NSFont" key="IBUIFont">
 									<string key="NSName">ArialMT</string>
 									<double key="NSSize">24</double>
