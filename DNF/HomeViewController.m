@@ -9,8 +9,11 @@
 #import "HomeViewController.h"
 #import "InformationViewController.h"
 #import "CoachViewController.h"
+#import "UITableViewCell+Beautiful.h"
 
 @implementation HomeViewController
+@synthesize tableView = _tableView;
+@synthesize backgroundCell = _backgroundCell;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,7 +37,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.backgroundColor = [UIColor clearColor];
     options = [[NSArray alloc] initWithObjects:@"Zoom sur la cigarette", @"Le coach", nil];
+    self.backgroundCell = [[UIImage imageNamed:@"Background_TVC_Home.png"] stretchableImageWithLeftCapWidth:10 topCapHeight:50];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -51,6 +56,8 @@
 
 - (void)viewDidUnload
 {
+    [self setTableView:nil];
+    [self setBackgroundCell:nil];
     [super viewDidUnload];
     [options release];
 }
@@ -102,16 +109,23 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
+    cell.textLabel.backgroundColor = [UIColor clearColor];
+    cell.detailTextLabel.backgroundColor = [UIColor clearColor];
+    
     cell.textLabel.text = [options objectAtIndex:indexPath.row];
     
     if (indexPath.row == 1) {
         cell.detailTextLabel.text = @"Arretez de fumer, connexion fb";
     }
     
+    [cell beautifulCellWithImage:self.backgroundCell];
+    
     return cell;
 }
 
 - (void)dealloc {
+    [_tableView release];
+    [_backgroundCell release];
     [super dealloc];
 }
 @end

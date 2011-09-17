@@ -11,6 +11,11 @@
 @interface HomeViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 {
     NSArray *options;
+    UITableView *_tableView;
+    UIImage *_backgroundCell;
 }
+
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) UIImage *backgroundCell;
 
 @end

@@ -7,8 +7,12 @@
 //
 
 #import "GeolocViewController.h"
+#import "MapViewController.h"
+#import "UITableViewCell+Beautiful.h"
 
 @implementation GeolocViewController
+@synthesize tableView = _tableView;
+@synthesize backgroundCell = _backgroundCell;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,11 +36,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.backgroundColor = [UIColor clearColor];
     options = [[NSArray alloc] initWithObjects:@"A proximité de vous", @"Tapez un code postale", nil];
+    self.backgroundCell = [UIImage imageNamed:@"Background_TVC_Home.png"];
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)viewDidUnload
 {
+    [self setTableView:nil];
     [super viewDidUnload];
     [options release];
     options = nil;
@@ -65,7 +84,10 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
+    cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.textLabel.text = [options objectAtIndex:indexPath.row];
+    
+    [cell beautifulCellWithImage:self.backgroundCell];
     
     return cell;
 }
@@ -74,7 +96,14 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    MapViewController *mapView = [[MapViewController alloc] initWithNibName:@"MapView" bundle:nil];
+    [self.navigationController pushViewController:mapView animated:YES];
+    [mapView release];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (void)dealloc {
+    [_tableView release];
+    [super dealloc];
+}
 @end

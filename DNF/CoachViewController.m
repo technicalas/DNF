@@ -14,6 +14,7 @@
 @implementation CoachViewController
 @synthesize switchFB;
 @synthesize facebook;
+@synthesize currentDate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,6 +60,7 @@
 - (void)viewDidUnload
 {
     [self setSwitchFB:nil];
+    [self setCurrentDate:nil];
     [super viewDidUnload];
     self.facebook.sessionDelegate = nil;
 }
@@ -180,6 +182,7 @@
 
 - (void)dealloc {
     [switchFB release];
+    [currentDate release];
     [super dealloc];
 }
 

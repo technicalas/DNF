@@ -11,6 +11,13 @@
 @interface DonsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 {
     NSArray *options;
+    UIImage *_backgroundCellUp;
+    UIImage *_backgroundCellDown;
+    UITableView *_tableView;
 }
+
+@property (nonatomic, retain) UIImage *backgroundCellUp;
+@property (nonatomic, retain) UIImage *backgroundCellDown;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 
 @end

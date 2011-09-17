@@ -8,8 +8,12 @@
 
 #import "DonsViewController.h"
 #import "DonsWebViewController.h"
+#import "UITableViewCell+Beautiful.h"
 
 @implementation DonsViewController
+@synthesize backgroundCellUp = _backgroundCellUp;
+@synthesize backgroundCellDown = _backgroundCellDown;
+@synthesize tableView = _tableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,11 +49,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.backgroundColor = [UIColor clearColor];
     options = [[NSArray alloc] initWithObjects:@"Ou vont vos dons", @"Je donne maintenant", nil];
+    self.backgroundCellUp = [UIImage imageNamed:@"Background_TVC_Dons_Up.png"];
+    self.backgroundCellDown = [UIImage imageNamed:@"Background_TVC_Dons_Down.png"];
 }
 
 - (void)viewDidUnload
 {
+    [self setTableView:nil];
     [super viewDidUnload];
     [options release];
 }
@@ -103,9 +111,27 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
+    cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.textLabel.text = [options objectAtIndex:indexPath.row];
+    
+    UIImage *background = nil;
+    switch (indexPath.row) {
+        case 0:
+            background = self.backgroundCellUp;
+            break;
+        case 1:
+            background = self.backgroundCellDown;
+        default:
+            break;
+    }
+    
+    [cell beautifulCellWithImage:background];
     
     return cell;
 }
 
+- (void)dealloc {
+    [_tableView release];
+    [super dealloc];
+}
 @end

@@ -13,9 +13,10 @@
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon.png</string>
+		<string>Icon@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.daniel-rueda.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>fr.asso.dnf.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -31,7 +32,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb208607312516870</string>
+				<string>fb247552555285262</string>
 			</array>
 		</dict>
 	</array>
