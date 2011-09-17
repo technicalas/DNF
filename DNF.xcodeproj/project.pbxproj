@@ -596,7 +596,7 @@
 		4BFB3B18140FD47D009283A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = DNF/DNF.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DNF/DNF-Prefix.pch";
 				INFOPLIST_FILE = "DNF/DNF-Info.plist";
