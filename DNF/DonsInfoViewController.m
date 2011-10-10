@@ -1,14 +1,14 @@
 //
-//  MoviePlayerViewController.m
+//  DonsInfoViewController.m
 //  DNF
 //
-//  Created by Daniel Rueda Jimenez on 12/09/11.
+//  Created by Gloria Jimenez Mendez on 29/09/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "MoviePlayerViewController.h"
+#import "DonsInfoViewController.h"
 
-@implementation MoviePlayerViewController
+@implementation DonsInfoViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,18 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"dnfvideo" ofType:@"mp4"];
-    
-    NSURL *url = [NSURL fileURLWithPath:resourcePath];
-    
-    MPMoviePlayerController *playerController = [[MPMoviePlayerController alloc] initWithContentURL:url];
-    
-    [playerController.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y+20, self.view.frame.size.width, self.view.frame.size.height)];
-    
-    [self.view addSubview:playerController.view];
-    
-    //playerController.fullscreen = YES;
-    [playerController play];
+    self.title = @"About donations";
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload
@@ -56,7 +46,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return YES;
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 @end
