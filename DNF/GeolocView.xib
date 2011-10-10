@@ -51,11 +51,12 @@
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="347698877"/>
 						<string key="NSReuseIdentifierKey">_NS:541</string>
+						<int key="IBUIContentMode">5</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">Fondo App.png</string>
+							<string key="NSResourceName">Fondo_App.jpg</string>
 						</object>
 					</object>
 					<object class="IBUITableView" id="347698877">
@@ -274,7 +275,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAACAgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">Fondo App.png</string>
+			<string key="NS.key.0">Fondo_App.jpg</string>
 			<string key="NS.object.0">{320, 480}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">534</string>

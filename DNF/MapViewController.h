@@ -8,11 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <RestKit/RestKit.h>
+#import "DNFObjectManager.h"
 
-@interface MapViewController : UIViewController<MKMapViewDelegate>
+@interface MapViewController : UIViewController<MKMapViewDelegate, RKObjectLoaderDelegate, RKRequestDelegate, UISearchBarDelegate>
 {
-    MKMapView *mapView;
+    MKMapView *_mapView;
+    DNFObjectManager *_manager;
+    BOOL CPSearch;
 }
+
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
+@property (nonatomic, retain) DNFObjectManager *manager;
+
+- (void)loadPlaces;
+- (void)loadPlacesWithCP:(NSString *)cp;
 
 @end

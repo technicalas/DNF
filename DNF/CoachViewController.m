@@ -9,12 +9,15 @@
 #import "CoachViewController.h"
 #import "DNFAppDelegate.h"
 #import "MBProgressHUD.h"
+#import "InformationManager.h"
 #import "AppConfig.h"
 
 @implementation CoachViewController
 @synthesize switchFB;
 @synthesize facebook;
 @synthesize currentDate;
+@synthesize dateLabel;
+@synthesize elapsedDaysLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,16 +46,16 @@
     DNFAppDelegate *delegate = (DNFAppDelegate *) [UIApplication sharedApplication].delegate;
     self.facebook = delegate.facebook; // Assign, no retain
     self.facebook.sessionDelegate = self;
+    self.elapsedDaysLabel.text = [InformationManager daysElapsed];
+    self.dateLabel.text = [InformationManager currentDate];
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     if ([self.facebook isSessionValid]) {
-        NSLog(@"Ya estoy logueado :P");
         [self.switchFB setOn:YES animated:NO];
     }else{
-        NSLog(@"No estoy logueado");
         [self.switchFB setOn:NO animated:NO];
     }
 }
@@ -61,6 +64,8 @@
 {
     [self setSwitchFB:nil];
     [self setCurrentDate:nil];
+    [self setDateLabel:nil];
+    [self setElapsedDaysLabel:nil];
     [super viewDidUnload];
     self.facebook.sessionDelegate = nil;
 }
@@ -77,14 +82,14 @@
  */
 - (void)fbDidLogin
 {
-    NSLog(@"Usuario logueado");
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:[self.facebook accessToken] forKey:FBAccessTokenKey];
     [defaults setObject:[self.facebook expirationDate] forKey:FBExpirationDateKey];
+    [defaults setObject:[NSDate date] forKey:kLoginDate];
     [defaults synchronize];
     
     [self.switchFB setOn:YES animated:YES];
-    [self.facebook requestWithGraphPath:@"me" andDelegate:self];
+    //[self.facebook requestWithGraphPath:@"me" andDelegate:self];
 }
 
 /**
@@ -92,7 +97,6 @@
  */
 - (void)fbDidNotLogin:(BOOL)cancelled
 {
-    NSLog(@"Usuario no se logueo");
     [self.switchFB setOn:NO animated:YES];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
@@ -102,10 +106,10 @@
  */
 - (void)fbDidLogout
 {
-    NSLog(@"Usuario deslogueado");
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults removeObjectForKey:FBAccessTokenKey];
     [defaults removeObjectForKey:FBExpirationDateKey];
+    [defaults removeObjectForKey:kLoginDate];
     [defaults synchronize];
     
     [self.switchFB setOn:NO animated:YES];
@@ -153,7 +157,7 @@
 #pragma mark - Actions methods
 
 - (IBAction)publishOnFacebook:(id)sender {
-    if ([self.facebook isSessionValid]) {
+    if (self.switchFB.isOn && self.facebook.isSessionValid) {
         NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                        //appIDFB, @"app_id",
                                        @"http://dnf.asso.fr/", @"link",
@@ -162,8 +166,15 @@
                                        @"Esta es la informacion que se publicara en FB?", @"caption",
                                        @"Aplicacion DNF", @"description",
                                        nil];
-        
         [self.facebook dialog:@"feed" andParams:params andDelegate:self];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" 
+                                                        message:@"You must register a Facebook account first" 
+                                                       delegate:nil 
+                                              cancelButtonTitle:@"OK" 
+                                              otherButtonTitles:nil];
+        [alert show];
+        [alert release];
     }
 }
 
@@ -183,6 +194,8 @@
 - (void)dealloc {
     [switchFB release];
     [currentDate release];
+    [dateLabel release];
+    [elapsedDaysLabel release];
     [super dealloc];
 }
 

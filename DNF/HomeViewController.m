@@ -10,19 +10,15 @@
 #import "InformationViewController.h"
 #import "CoachViewController.h"
 #import "UITableViewCell+Beautiful.h"
+#import "InformationManager.h"
 
 @implementation HomeViewController
 @synthesize tableView = _tableView;
 @synthesize backgroundCell = _backgroundCell;
+@synthesize dateLabel = _dateLabel;
+@synthesize daysElapsedLabel = _daysElapsedLabel;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+#pragma mark - (De)allocation and initialization
 
 - (void)didReceiveMemoryWarning
 {
@@ -32,14 +28,28 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (void)dealloc {
+    [_tableView release];
+    [_backgroundCell release];
+    if (_moviePlayerView != nil) {
+        [_moviePlayerView release];
+    }
+    [_dateLabel release];
+    [_daysElapsedLabel release];
+    [super dealloc];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.tableView.backgroundColor = [UIColor clearColor];
-    options = [[NSArray alloc] initWithObjects:@"Zoom sur la cigarette", @"Le coach", nil];
-    self.backgroundCell = [[UIImage imageNamed:@"Background_TVC_Home.png"] stretchableImageWithLeftCapWidth:10 topCapHeight:50];
+    options = [[NSArray alloc] initWithObjects:@"Zoom sur la cigarette", @"Le coach", @"Video", nil];
+    self.backgroundCell = [UIImage imageNamed:@"Background_TVC_Home.png"];
+    
+    self.dateLabel.text = [[InformationManager currentDate] uppercaseString];
+    self.daysElapsedLabel.text = [InformationManager daysElapsed];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -56,8 +66,11 @@
 
 - (void)viewDidUnload
 {
+    _moviePlayerView = nil;
     [self setTableView:nil];
     [self setBackgroundCell:nil];
+    [self setDateLabel:nil];
+    [self setDaysElapsedLabel:nil];
     [super viewDidUnload];
     [options release];
 }
@@ -68,7 +81,32 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - Movie Player
+
+// Respond to the notification when the movie player finished
+- (void) moviePlayerDidFinish:(NSNotification *)notification
+{
+}
+
+- (void) configureMoviePlayer
+{
+    if (_moviePlayerView == nil) {
+        NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"dnfvideo" ofType:@"mp4"];
+        NSURL *url = [NSURL fileURLWithPath:resourcePath];
+        _moviePlayerView = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
+        _moviePlayerView.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self 
+                                                 selector:@selector(moviePlayerDidFinish:) 
+                                                     name:MPMoviePlayerPlaybackDidFinishNotification
+                                                   object:nil];
+    }
+    [self.tabBarController presentMoviePlayerViewControllerAnimated:_moviePlayerView];
+    [_moviePlayerView.moviePlayer play];
+}
+
 #pragma mark - UITableViewDelegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UIViewController *detailsView = nil;
@@ -80,25 +118,29 @@
         case 1:
             detailsView = [[CoachViewController alloc] initWithNibName:@"CoachView" bundle:nil];
             break;
+        case 2:
+            [self configureMoviePlayer];
+            break;
         default:
             break;
     }
     if (detailsView != nil) {
         [self.navigationController pushViewController:detailsView animated:YES];
+        [detailsView release];
     }
-    [detailsView release];
-    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - UITableViewDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView 
+ numberOfRowsInSection:(NSInteger)section
 {
     return [options count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellID = @"homeCellID";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
@@ -123,9 +165,4 @@
     return cell;
 }
 
-- (void)dealloc {
-    [_tableView release];
-    [_backgroundCell release];
-    [super dealloc];
-}
 @end

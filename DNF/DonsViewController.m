@@ -8,6 +8,7 @@
 
 #import "DonsViewController.h"
 #import "DonsWebViewController.h"
+#import "DonsInfoViewController.h"
 #import "UITableViewCell+Beautiful.h"
 
 @implementation DonsViewController
@@ -72,24 +73,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DonsWebViewController *detailsView = nil;
-    
+    DonsInfoViewController *infoView = nil;
     switch (indexPath.row) {
         case 0:
-            detailsView = [[DonsWebViewController alloc] initWithNibName:@"DonsWebView" bundle:nil];
-            detailsView.title = @"Google";
-            detailsView.pageURL = [NSURL URLWithString:@"http://www.google.com"];
-            [self.navigationController pushViewController:detailsView animated:YES];
+            infoView = [[DonsInfoViewController alloc] initWithNibName:@"DonsInfoView" bundle:nil];
+            [self.navigationController pushViewController:infoView animated:YES];
+            [infoView release];
             break;
         case 1:
             detailsView = [[DonsWebViewController alloc] initWithNibName:@"DonsWebView" bundle:nil];
-            detailsView.title = @"Yahoo";
-            detailsView.pageURL = [NSURL URLWithString:@"http://www.yahoo.com"];
+            detailsView.pageURL = [NSURL URLWithString:@"http://soplo-digital.com/webdnf/donation.php"];
             [self.navigationController pushViewController:detailsView animated:YES];
+            [detailsView release];
             break;
         default:
             break;
     }
-    [detailsView release];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

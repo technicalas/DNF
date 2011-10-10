@@ -37,7 +37,7 @@
 {
     [super viewDidLoad];
     self.tableView.backgroundColor = [UIColor clearColor];
-    options = [[NSArray alloc] initWithObjects:@"A proximité de vous", @"Tapez un code postale", nil];
+    options = [[NSArray alloc] initWithObjects:@"A proximité de vous", @"Ajouter terrasses", nil];
     self.backgroundCell = [UIImage imageNamed:@"Background_TVC_Home.png"];
 }
 

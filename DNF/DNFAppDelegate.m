@@ -8,7 +8,6 @@
 
 #import "DNFAppDelegate.h"
 #import "AppConfig.h"
-#import "MoviePlayerViewController.h"
 
 @implementation DNFAppDelegate
 @synthesize facebook = _facebook;
@@ -23,10 +22,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window.rootViewController = self.tabBarController;
-    /*
-    MoviePlayerViewController *moviePlayer = [[MoviePlayerViewController alloc] initWithNibName:@"MoviePlayerView" bundle:nil];
-    [self.window addSubview:moviePlayer.view];
-    */
     [self.window makeKeyAndVisible];
     
     Facebook *facebook = [[Facebook alloc] initWithAppId:appIDFB andDelegate:nil];
@@ -39,7 +34,7 @@
         self.facebook.accessToken = [defaults objectForKey:FBAccessTokenKey];
         self.facebook.expirationDate = [defaults objectForKey:FBExpirationDateKey];
     }
-    
+
     return YES;
 }
 

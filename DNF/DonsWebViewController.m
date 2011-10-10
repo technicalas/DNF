@@ -34,6 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Donate";
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:self.pageURL];
     [self.webView loadRequest:urlRequest];
 }

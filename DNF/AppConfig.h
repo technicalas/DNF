@@ -12,6 +12,7 @@
 #define FBExpirationDateKey @"FBExpirationDateKey"
 #define appIDFB @"247552555285262"
 #define FBUsernameKey @"IDUserFBKey"
+#define kLoginDate @"loginDate"
 
 typedef enum typeOfRequest{
     kRequestTypeUserInfo = 11,
