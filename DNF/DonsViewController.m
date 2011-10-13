@@ -72,7 +72,7 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DonsWebViewController *detailsView = nil;
+    //DonsWebViewController *detailsView = nil;
     DonsInfoViewController *infoView = nil;
     switch (indexPath.row) {
         case 0:
@@ -81,10 +81,13 @@
             [infoView release];
             break;
         case 1:
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://soplo-digital.com/webdnf/donation.php"]];
+            /*
             detailsView = [[DonsWebViewController alloc] initWithNibName:@"DonsWebView" bundle:nil];
             detailsView.pageURL = [NSURL URLWithString:@"http://soplo-digital.com/webdnf/donation.php"];
             [self.navigationController pushViewController:detailsView animated:YES];
             [detailsView release];
+             */
             break;
         default:
             break;

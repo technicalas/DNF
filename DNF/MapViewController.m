@@ -159,15 +159,15 @@ NSString *const IMAGES_URL = @"images";
 }
 
 #pragma mark - Load data
-- (void)loadPlacesWithCP:(NSString *)cp
+- (RKObjectLoader *)loadPlacesWithCP:(NSString *)cp
 {
     NSDictionary *params = [NSDictionary dictionaryWithObject:cp forKey:@"cp"];
-    [self.manager loadObjectsAtResourcePath:PLACES_REQUEST withParameters:params delegate:self];
+    return [self.manager loadObjectsAtResourcePath:PLACES_REQUEST withParameters:params delegate:self];
 }
 
-- (void) loadPlaces
+- (RKObjectLoader *)loadPlaces
 {
-    [self loadPlacesWithCP:@""];
+    return [self loadPlacesWithCP:@""];
 }
 
 #pragma mark - MKMapViewDelegate

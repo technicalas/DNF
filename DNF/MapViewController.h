@@ -21,7 +21,7 @@
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 @property (nonatomic, retain) DNFObjectManager *manager;
 
-- (void)loadPlaces;
-- (void)loadPlacesWithCP:(NSString *)cp;
+- (RKObjectLoader *)loadPlaces;
+- (RKObjectLoader *)loadPlacesWithCP:(NSString *)cp;
 
 @end

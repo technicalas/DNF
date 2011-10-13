@@ -48,6 +48,9 @@
     self.facebook.sessionDelegate = self;
     self.elapsedDaysLabel.text = [InformationManager daysElapsed];
     self.dateLabel.text = [InformationManager currentDate];
+    
+    UITextField *txtPrice = (UITextField *) [self.view viewWithTag:12];
+    txtPrice.keyboardType = UIKeyboardTypeDecimalPad;
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -90,6 +93,7 @@
     
     [self.switchFB setOn:YES animated:YES];
     //[self.facebook requestWithGraphPath:@"me" andDelegate:self];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 /**
