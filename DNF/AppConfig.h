@@ -14,6 +14,9 @@
 #define FBUsernameKey @"IDUserFBKey"
 #define kLoginDate @"loginDate"
 
+#define kNumberOfPacks @"kNumberOfPacks"
+#define kPriceUnit @"kPriceUnit"
+
 typedef enum typeOfRequest{
     kRequestTypeUserInfo = 11,
     kRequestTypeSendInfo

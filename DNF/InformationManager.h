@@ -12,9 +12,16 @@
 {
     NSUInteger *_days;
     NSDate *currentDate;
+    NSString *numberOfPacks;
+    NSString *priceUnit;
 }
 
++ (NSString *)priceUnit;
++ (NSString *)packsPerDay;
 + (NSString *)daysElapsed;
 + (NSString *)currentDate;
++ (float)calculateSavings;
++ (void)savePrice:(NSString *)price;
++ (void)savePacks:(NSString *)packs;
 
 @end

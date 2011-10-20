@@ -44,6 +44,26 @@ static InformationManager *_sharedManager = nil;
 }
 
 #pragma mark - Methods
++ (NSString *)priceUnit
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *unitPrice = [defaults objectForKey:kPriceUnit];
+    if (unitPrice == nil) {
+        return @"0";
+    }
+    return unitPrice;
+}
+
++ (NSString *)packsPerDay
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *packs = [defaults objectForKey:kNumberOfPacks];
+    if (packs == nil) {
+        return @"0";
+    }
+    return packs;
+}
+
 + (NSString *)daysElapsed
 {
     NSUInteger days = 0;
@@ -71,6 +91,29 @@ static InformationManager *_sharedManager = nil;
     NSDate *now = [NSDate date];
     NSString *formattedDateString = [dateFormatter stringFromDate:now];
     return formattedDateString;
+}
+
++ (float)calculateSavings
+{
+    int days = [[self daysElapsed] intValue];
+    int packs = [[self packsPerDay] intValue];
+    float price = [[self priceUnit] floatValue];
+    float savings = days*packs*price;
+    return savings;
+}
+
++ (void)savePrice:(NSString *)price
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:price forKey:kPriceUnit];
+    [defaults synchronize];
+}
+
++ (void)savePacks:(NSString *)packs
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:packs forKey:kNumberOfPacks];
+    [defaults synchronize];
 }
 
 @end

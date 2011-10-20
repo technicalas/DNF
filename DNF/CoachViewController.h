@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FBConnect.h"
 
-@interface CoachViewController : UIViewController<UIAlertViewDelegate, FBSessionDelegate, FBRequestDelegate, FBDialogDelegate>
+@interface CoachViewController : UIViewController<UIAlertViewDelegate, FBSessionDelegate, FBRequestDelegate, FBDialogDelegate, UITextFieldDelegate>
 {
     Facebook *_facebook;
     UILabel *currentDate;
@@ -17,7 +17,10 @@
     UILabel *elapsedDaysLabel;
     UISwitch *switchFB;
 }
+@property (retain, nonatomic) IBOutlet UITextField *packsText;
+@property (retain, nonatomic) IBOutlet UITextField *priceText;
 
+@property (retain, nonatomic) IBOutlet UILabel *savingsLabel;
 @property (nonatomic, retain) IBOutlet UISwitch *switchFB;
 @property (nonatomic, assign) Facebook *facebook;
 @property (nonatomic, retain) IBOutlet UILabel *currentDate;

@@ -13,6 +13,9 @@
 #import "AppConfig.h"
 
 @implementation CoachViewController
+@synthesize packsText;
+@synthesize priceText;
+@synthesize savingsLabel;
 @synthesize switchFB;
 @synthesize facebook;
 @synthesize currentDate;
@@ -48,6 +51,11 @@
     self.facebook.sessionDelegate = self;
     self.elapsedDaysLabel.text = [InformationManager daysElapsed];
     self.dateLabel.text = [InformationManager currentDate];
+    self.priceText.text = [InformationManager priceUnit];
+    self.packsText.text = [InformationManager packsPerDay];
+    
+    NSString *savings = [NSString stringWithFormat:@"%.2f € economisés", [InformationManager calculateSavings] ];
+    self.savingsLabel.text = savings;
     
     UITextField *txtPrice = (UITextField *) [self.view viewWithTag:12];
     txtPrice.keyboardType = UIKeyboardTypeDecimalPad;
@@ -69,6 +77,9 @@
     [self setCurrentDate:nil];
     [self setDateLabel:nil];
     [self setElapsedDaysLabel:nil];
+    [self setSavingsLabel:nil];
+    [self setPacksText:nil];
+    [self setPriceText:nil];
     [super viewDidUnload];
     self.facebook.sessionDelegate = nil;
 }
@@ -79,18 +90,35 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)saveAllInfo
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[self.facebook accessToken] forKey:FBAccessTokenKey];
+    [defaults setObject:[self.facebook expirationDate] forKey:FBExpirationDateKey];
+    [defaults setObject:[NSDate date] forKey:kLoginDate];
+    [defaults setObject:self.priceText.text forKey:kPriceUnit];
+    [defaults setObject:self.packsText.text forKey:kNumberOfPacks];
+    [defaults synchronize];
+}
+
+- (void)removeAllInfo
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:FBAccessTokenKey];
+    [defaults removeObjectForKey:FBExpirationDateKey];
+    [defaults removeObjectForKey:kLoginDate];
+    [defaults removeObjectForKey:kPriceUnit];
+    [defaults removeObjectForKey:kNumberOfPacks];
+    [defaults synchronize];
+}
+
 #pragma mark - FBSessionDelegate
 /**
  * Called when the user successfully logged in.
  */
 - (void)fbDidLogin
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:[self.facebook accessToken] forKey:FBAccessTokenKey];
-    [defaults setObject:[self.facebook expirationDate] forKey:FBExpirationDateKey];
-    [defaults setObject:[NSDate date] forKey:kLoginDate];
-    [defaults synchronize];
-    
+    [self saveAllInfo];
     [self.switchFB setOn:YES animated:YES];
     //[self.facebook requestWithGraphPath:@"me" andDelegate:self];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -110,12 +138,7 @@
  */
 - (void)fbDidLogout
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults removeObjectForKey:FBAccessTokenKey];
-    [defaults removeObjectForKey:FBExpirationDateKey];
-    [defaults removeObjectForKey:kLoginDate];
-    [defaults synchronize];
-    
+    [self removeAllInfo];
     [self.switchFB setOn:NO animated:YES];
 }
 
@@ -162,15 +185,29 @@
 
 - (IBAction)publishOnFacebook:(id)sender {
     if (self.switchFB.isOn && self.facebook.isSessionValid) {
+        if ([self.priceText.text isEqualToString:@"0"] || [self.packsText.text isEqualToString:@"0"]) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:@"Information incomplete. Price of packs are required" 
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK" 
+                                                  otherButtonTitles:nil];
+            [alert show];
+            [alert release];
+            return;
+        }
+        
+        NSString *message = [NSString stringWithFormat:@"J'arrète de fumer aujourd'hui %@! Faites-vous-entendre", self.dateLabel.text];
+        
         NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                        //appIDFB, @"app_id",
                                        @"http://dnf.asso.fr/", @"link",
                                        @"http://dnf.asso.fr/css/dnf.png", @"picture",
                                        @"DNF", @"name",
-                                       @"Esta es la informacion que se publicara en FB?", @"caption",
+                                       message, @"caption",
                                        @"Aplicacion DNF", @"description",
                                        nil];
         [self.facebook dialog:@"feed" andParams:params andDelegate:self];
+        [self saveAllInfo];
     }else{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" 
                                                         message:@"You must register a Facebook account first" 
@@ -200,6 +237,9 @@
     [currentDate release];
     [dateLabel release];
     [elapsedDaysLabel release];
+    [savingsLabel release];
+    [packsText release];
+    [priceText release];
     [super dealloc];
 }
 
@@ -215,6 +255,14 @@
             break;
         default:
             break;
+    }
+}
+
+#pragma mark - UITextFieldDelegate
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if (textField == self.priceText) {
+    }else if(textField == self.packsText){
     }
 }
 

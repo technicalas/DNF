@@ -9,6 +9,7 @@
 #import "GeolocViewController.h"
 #import "MapViewController.h"
 #import "UITableViewCell+Beautiful.h"
+#import "AddPlaceViewController.h"
 
 @implementation GeolocViewController
 @synthesize tableView = _tableView;
@@ -37,7 +38,7 @@
 {
     [super viewDidLoad];
     self.tableView.backgroundColor = [UIColor clearColor];
-    options = [[NSArray alloc] initWithObjects:@"A proximité de vous", @"Ajouter terrasses", nil];
+    options = [[NSArray alloc] initWithObjects:@"A proximité de vous", @"Refèrencer un établissement", nil];
     self.backgroundCell = [UIImage imageNamed:@"Background_TVC_Home.png"];
 }
 
@@ -96,9 +97,16 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MapViewController *mapView = [[MapViewController alloc] initWithNibName:@"MapView" bundle:nil];
-    [self.navigationController pushViewController:mapView animated:YES];
-    [mapView release];
+    if (indexPath.row == 0) {
+        MapViewController *mapView = [[MapViewController alloc] initWithNibName:@"MapView" bundle:nil];
+        [self.navigationController pushViewController:mapView animated:YES];
+        [mapView release];
+    }else{
+        AddPlaceViewController *addPlace = [[AddPlaceViewController alloc] initWithNibName:@"AddPlaceView" bundle:nil];
+        [self.navigationController pushViewController:addPlace animated:YES];
+        [addPlace release];
+    }
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

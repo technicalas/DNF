@@ -16,6 +16,17 @@
 		4B0B504514356D4E006C9A66 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B503F14356D4E006C9A66 /* UIButton+WebCache.m */; };
 		4B0B504614356D4E006C9A66 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B504114356D4E006C9A66 /* UIImageView+WebCache.m */; };
 		4B0B50611435766C006C9A66 /* ping_cafe.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B0B50601435766C006C9A66 /* ping_cafe.png */; };
+		4B0E6BDC144E6A23005B8737 /* AddPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0E6BDA144E6A23005B8737 /* AddPlaceViewController.m */; };
+		4B0E6BDD144E6A23005B8737 /* AddPlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B0E6BDB144E6A23005B8737 /* AddPlaceView.xib */; };
+		4B0E6BE1144E6C86005B8737 /* TableViewCellBasicInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0E6BE0144E6C86005B8737 /* TableViewCellBasicInfo.m */; };
+		4B0E6C11144E7DC8005B8737 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0E6C0F144E7DC6005B8737 /* CategoriesViewController.m */; };
+		4B0E6C12144E7DC8005B8737 /* CategoriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B0E6C10144E7DC7005B8737 /* CategoriesView.xib */; };
+		4B0E6C15144E7FF2005B8737 /* TableViewCellCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0E6C14144E7FF2005B8737 /* TableViewCellCategories.m */; };
+		4B0E6C2D144E85D1005B8737 /* TableViewCellCategories.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B0E6C2C144E85D1005B8737 /* TableViewCellCategories.xib */; };
+		4B0E6C5D144F10CE005B8737 /* DescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0E6C5B144F10CE005B8737 /* DescriptionViewController.m */; };
+		4B0E6C5E144F10CE005B8737 /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B0E6C5C144F10CE005B8737 /* DescriptionView.xib */; };
+		4B0E6C62144F11E3005B8737 /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0E6C60144F11E2005B8737 /* AddressViewController.m */; };
+		4B0E6C63144F11E3005B8737 /* AddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B0E6C61144F11E2005B8737 /* AddressView.xib */; };
 		4B16CCA714251BFC000C544D /* Background_TVC_Home.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B16CCA614251BFB000C544D /* Background_TVC_Home.png */; };
 		4B16CCAA14252129000C544D /* UITableViewCell+Beautiful.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B16CCA914252129000C544D /* UITableViewCell+Beautiful.m */; };
 		4B16CCAD142523E1000C544D /* Background_TVC_Dons_Up.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B16CCAB142523E0000C544D /* Background_TVC_Dons_Up.png */; };
@@ -204,6 +215,23 @@
 		4B0B504014356D4E006C9A66 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		4B0B504114356D4E006C9A66 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		4B0B50601435766C006C9A66 /* ping_cafe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ping_cafe.png; sourceTree = "<group>"; };
+		4B0E6BD9144E6A23005B8737 /* AddPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPlaceViewController.h; sourceTree = "<group>"; };
+		4B0E6BDA144E6A23005B8737 /* AddPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPlaceViewController.m; sourceTree = "<group>"; };
+		4B0E6BDB144E6A23005B8737 /* AddPlaceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPlaceView.xib; sourceTree = "<group>"; };
+		4B0E6BDF144E6C86005B8737 /* TableViewCellBasicInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellBasicInfo.h; sourceTree = "<group>"; };
+		4B0E6BE0144E6C86005B8737 /* TableViewCellBasicInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellBasicInfo.m; sourceTree = "<group>"; };
+		4B0E6C0E144E7DC6005B8737 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
+		4B0E6C0F144E7DC6005B8737 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
+		4B0E6C10144E7DC7005B8737 /* CategoriesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoriesView.xib; sourceTree = "<group>"; };
+		4B0E6C13144E7FF2005B8737 /* TableViewCellCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellCategories.h; sourceTree = "<group>"; };
+		4B0E6C14144E7FF2005B8737 /* TableViewCellCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellCategories.m; sourceTree = "<group>"; };
+		4B0E6C2C144E85D1005B8737 /* TableViewCellCategories.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellCategories.xib; sourceTree = "<group>"; };
+		4B0E6C5A144F10CE005B8737 /* DescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescriptionViewController.h; sourceTree = "<group>"; };
+		4B0E6C5B144F10CE005B8737 /* DescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescriptionViewController.m; sourceTree = "<group>"; };
+		4B0E6C5C144F10CE005B8737 /* DescriptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
+		4B0E6C5F144F11E2005B8737 /* AddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressViewController.h; sourceTree = "<group>"; };
+		4B0E6C60144F11E2005B8737 /* AddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressViewController.m; sourceTree = "<group>"; };
+		4B0E6C61144F11E2005B8737 /* AddressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressView.xib; sourceTree = "<group>"; };
 		4B16CCA0142513FA000C544D /* DNF.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DNF.entitlements; sourceTree = "<group>"; };
 		4B16CCA614251BFB000C544D /* Background_TVC_Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background_TVC_Home.png; sourceTree = "<group>"; };
 		4B16CCA814252128000C544D /* UITableViewCell+Beautiful.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Beautiful.h"; sourceTree = "<group>"; };
@@ -364,6 +392,18 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		4B0E6BDE144E6C2F005B8737 /* Table view cells */ = {
+			isa = PBXGroup;
+			children = (
+				4B0E6BDF144E6C86005B8737 /* TableViewCellBasicInfo.h */,
+				4B0E6BE0144E6C86005B8737 /* TableViewCellBasicInfo.m */,
+				4B0E6C13144E7FF2005B8737 /* TableViewCellCategories.h */,
+				4B0E6C14144E7FF2005B8737 /* TableViewCellCategories.m */,
+				4B0E6C2C144E85D1005B8737 /* TableViewCellCategories.xib */,
+			);
+			name = "Table view cells";
+			sourceTree = "<group>";
+		};
 		4B5AF8DA142F608C00815D46 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +457,7 @@
 		4B5AF911142F62C200815D46 /* Third tab */ = {
 			isa = PBXGroup;
 			children = (
+				4B0E6BDE144E6C2F005B8737 /* Table view cells */,
 				4BA725C61434168700D3C98A /* Annotations */,
 				4BFB3B2C140FD4E9009283A6 /* GeolocView.xib */,
 				4BFB3B2D140FD4E9009283A6 /* GeolocViewController.h */,
@@ -424,6 +465,18 @@
 				4BD4DCB71417093C009B0BB8 /* MapViewController.h */,
 				4BD4DCB81417093C009B0BB8 /* MapViewController.m */,
 				4BD4DCB91417093C009B0BB8 /* MapView.xib */,
+				4B0E6BD9144E6A23005B8737 /* AddPlaceViewController.h */,
+				4B0E6BDA144E6A23005B8737 /* AddPlaceViewController.m */,
+				4B0E6BDB144E6A23005B8737 /* AddPlaceView.xib */,
+				4B0E6C0E144E7DC6005B8737 /* CategoriesViewController.h */,
+				4B0E6C0F144E7DC6005B8737 /* CategoriesViewController.m */,
+				4B0E6C10144E7DC7005B8737 /* CategoriesView.xib */,
+				4B0E6C5A144F10CE005B8737 /* DescriptionViewController.h */,
+				4B0E6C5B144F10CE005B8737 /* DescriptionViewController.m */,
+				4B0E6C5C144F10CE005B8737 /* DescriptionView.xib */,
+				4B0E6C5F144F11E2005B8737 /* AddressViewController.h */,
+				4B0E6C60144F11E2005B8737 /* AddressViewController.m */,
+				4B0E6C61144F11E2005B8737 /* AddressView.xib */,
 			);
 			name = "Third tab";
 			sourceTree = "<group>";
@@ -678,6 +731,9 @@
 /* Begin PBXProject section */
 		4BFB3AE7140FD47D009283A6 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 4BFB3AEA140FD47D009283A6 /* Build configuration list for PBXProject "DNF" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -821,6 +877,11 @@
 				4BC7E318143B6151005E54CF /* Fondo_App@2x.jpg in Resources */,
 				4BC7E319143B6151005E54CF /* Fondo_Donacion.jpg in Resources */,
 				4BC7E31A143B6151005E54CF /* Fondo_Donacion@2x.jpg in Resources */,
+				4B0E6BDD144E6A23005B8737 /* AddPlaceView.xib in Resources */,
+				4B0E6C12144E7DC8005B8737 /* CategoriesView.xib in Resources */,
+				4B0E6C2D144E85D1005B8737 /* TableViewCellCategories.xib in Resources */,
+				4B0E6C5E144F10CE005B8737 /* DescriptionView.xib in Resources */,
+				4B0E6C63144F11E3005B8737 /* AddressView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -870,6 +931,12 @@
 				4B0B504614356D4E006C9A66 /* UIImageView+WebCache.m in Sources */,
 				4B0230721436AA8100A1F864 /* PlaceAnnotationView.m in Sources */,
 				4B59A90C143A0EB900824FC6 /* InformationManager.m in Sources */,
+				4B0E6BDC144E6A23005B8737 /* AddPlaceViewController.m in Sources */,
+				4B0E6BE1144E6C86005B8737 /* TableViewCellBasicInfo.m in Sources */,
+				4B0E6C11144E7DC8005B8737 /* CategoriesViewController.m in Sources */,
+				4B0E6C15144E7FF2005B8737 /* TableViewCellCategories.m in Sources */,
+				4B0E6C5D144F10CE005B8737 /* DescriptionViewController.m in Sources */,
+				4B0E6C62144F11E3005B8737 /* AddressViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -915,7 +982,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D35B4725-1E38-4ABB-9922-8BB2A4006976";
 				SDKROOT = iphoneos;
@@ -926,10 +993,13 @@
 		4B8BE19714250D3700D66590 /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"ARCHS[sdk=*]" = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = DNF/DNF.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gloria Jimenez Mendez";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DNF/DNF-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/RestKit/Build\"";
 				INFOPLIST_FILE = "DNF/DNF-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
@@ -958,7 +1028,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C9F3C139-77A1-4314-83C8-86F1A4473939";
 				SDKROOT = iphoneos;
 			};
@@ -976,7 +1046,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C9F3C139-77A1-4314-83C8-86F1A4473939";
 				SDKROOT = iphoneos;
@@ -990,6 +1060,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DNF/DNF-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/RestKit/Build\"";
 				INFOPLIST_FILE = "DNF/DNF-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
@@ -1004,6 +1075,7 @@
 				CODE_SIGN_ENTITLEMENTS = DNF/DNF.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DNF/DNF-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/RestKit/Build\"";
 				INFOPLIST_FILE = "DNF/DNF-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
