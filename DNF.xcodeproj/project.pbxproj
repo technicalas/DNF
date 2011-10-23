@@ -232,7 +232,6 @@
 		4B0E6C5F144F11E2005B8737 /* AddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressViewController.h; sourceTree = "<group>"; };
 		4B0E6C60144F11E2005B8737 /* AddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressViewController.m; sourceTree = "<group>"; };
 		4B0E6C61144F11E2005B8737 /* AddressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressView.xib; sourceTree = "<group>"; };
-		4B16CCA0142513FA000C544D /* DNF.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DNF.entitlements; sourceTree = "<group>"; };
 		4B16CCA614251BFB000C544D /* Background_TVC_Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background_TVC_Home.png; sourceTree = "<group>"; };
 		4B16CCA814252128000C544D /* UITableViewCell+Beautiful.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Beautiful.h"; sourceTree = "<group>"; };
 		4B16CCA914252129000C544D /* UITableViewCell+Beautiful.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Beautiful.m"; sourceTree = "<group>"; };
@@ -602,7 +601,6 @@
 				4B5AF911142F62C200815D46 /* Third tab */,
 				4B5AF910142F626A00815D46 /* Second tab */,
 				4B5AF90F142F626000815D46 /* First tab */,
-				4B16CCA0142513FA000C544D /* DNF.entitlements */,
 				4BFB3B1F140FD4E9009283A6 /* AppConfig.h */,
 				4BFB3B03140FD47D009283A6 /* DNFAppDelegate.h */,
 				4BFB3B04140FD47D009283A6 /* DNFAppDelegate.m */,
@@ -995,7 +993,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"ARCHS[sdk=*]" = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_ENTITLEMENTS = DNF/DNF.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gloria Jimenez Mendez";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DNF/DNF-Prefix.pch";
@@ -1058,6 +1056,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gloria Jimenez Mendez (MN2YMN428D)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DNF/DNF-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -1065,6 +1064,7 @@
 				INFOPLIST_FILE = "DNF/DNF-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "ED407060-0C91-48F4-9141-313623448F22";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
