@@ -116,4 +116,20 @@ static InformationManager *_sharedManager = nil;
     [defaults synchronize];
 }
 
++ (void)scheduleNotifications
+{
+    UILocalNotification *localNotifications = [[UILocalNotification alloc] init];
+    localNotifications.fireDate = [NSDate dateWithTimeIntervalSinceNow:10];
+    localNotifications.alertBody = @"Information";
+    localNotifications.alertAction = @"View";
+    localNotifications.soundName = UILocalNotificationDefaultSoundName;
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotifications];
+    [localNotifications release];
+}
+
++ (void)unscheduleNotifications
+{
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+}
+
 @end

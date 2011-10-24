@@ -71,6 +71,12 @@
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [InformationManager scheduleNotifications];
+}
+
 - (void)viewDidUnload
 {
     [self setSwitchFB:nil];

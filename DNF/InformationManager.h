@@ -23,5 +23,6 @@
 + (float)calculateSavings;
 + (void)savePrice:(NSString *)price;
 + (void)savePacks:(NSString *)packs;
++ (void)scheduleNotifications;
 
 @end
