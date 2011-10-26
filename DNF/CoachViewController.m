@@ -71,12 +71,6 @@
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    [InformationManager scheduleNotifications];
-}
-
 - (void)viewDidUnload
 {
     [self setSwitchFB:nil];
@@ -125,8 +119,8 @@
 - (void)fbDidLogin
 {
     [self saveAllInfo];
+    [InformationManager scheduleNotifications];
     [self.switchFB setOn:YES animated:YES];
-    //[self.facebook requestWithGraphPath:@"me" andDelegate:self];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
@@ -145,6 +139,7 @@
 - (void)fbDidLogout
 {
     [self removeAllInfo];
+    [InformationManager unscheduleNotifications];
     [self.switchFB setOn:NO animated:YES];
 }
 

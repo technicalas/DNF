@@ -24,5 +24,6 @@
 + (void)savePrice:(NSString *)price;
 + (void)savePacks:(NSString *)packs;
 + (void)scheduleNotifications;
++ (void)unscheduleNotifications;
 
 @end

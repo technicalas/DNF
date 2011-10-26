@@ -118,13 +118,50 @@ static InformationManager *_sharedManager = nil;
 
 + (void)scheduleNotifications
 {
-    UILocalNotification *localNotifications = [[UILocalNotification alloc] init];
-    localNotifications.fireDate = [NSDate dateWithTimeIntervalSinceNow:10];
-    localNotifications.alertBody = @"Information";
-    localNotifications.alertAction = @"View";
-    localNotifications.soundName = UILocalNotificationDefaultSoundName;
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotifications];
-    [localNotifications release];
+    int mins = 60;
+    int hrs = 60*mins;
+    int days = 24*hrs;
+    int month = 30*days;
+    
+    NSNumber* firstNot = [NSNumber numberWithInt:20*mins];
+    NSString *firstString = @"20 minutes après la dernière cigarette. La pression sanguine et les pulsations de cœur redeviennent normale";
+    NSArray *first = [NSArray arrayWithObjects:firstNot, firstString, nil];
+    
+    NSNumber* secondNot = [NSNumber numberWithInt:8*hrs];
+    NSString *secondString = @"8 heures après la dernière cigarette. La quantité de monoxyde de carbone dans le sang diminue de moitié. L’oxygénation des cellules redevient normale";
+    NSArray *second = [NSArray arrayWithObjects:secondNot, secondString, nil];
+    
+    NSNumber* thirdNot = [NSNumber numberWithInt:24*hrs];
+    NSString *thirdString = @"24 heures après la dernière cigarette. Le risque d’infarctus du myocarde diminue déjà. Les poumons commencent à éliminer le mucus et les résidus de fumée. Le corps ne contient plus de nicotine";
+    NSArray *third = [NSArray arrayWithObjects:thirdNot, thirdString, nil];
+    
+    NSNumber* fourthNot = [NSNumber numberWithInt:48*hrs];
+    NSString *fourthString = @"48 heures après la dernière cigarette. Le gout et l’odorat s’améliorent. Les terminaisons nerveuses gustatives commencent à repousser";
+    NSArray *fourth = [NSArray arrayWithObjects:fourthNot, fourthString, nil];
+    
+    NSNumber* fifthNot = [NSNumber numberWithInt:72*hrs];
+    NSString *fifthString = @"72 heures après la dernière cigarette. Respirez devient plus facile. Les bronchent commencent a se relâcher et on se sent plus énergique";
+    NSArray *fifth = [NSArray arrayWithObjects:fifthNot, fifthString, nil];
+    
+    NSNumber* sixthNot = [NSNumber numberWithInt:2*month];
+    NSString *sixthString = @"2 semaines à 3 mois après la dernière cigarette. La toux et la fatigue diminuent. On récupère du souffle. On marche plus facilement";
+    NSArray *sixth = [NSArray arrayWithObjects:sixthNot, sixthString, nil];
+    
+    NSNumber* seventhNot = [NSNumber numberWithInt:5*month];
+    NSString *seventhString = @"1 a 9 mois après la dernière cigarette. Les cils bronchiques repoussent. On est de moins en mois essouflé";
+    NSArray *seventh = [NSArray arrayWithObjects:seventhNot, seventhString, nil];
+    
+    NSArray *notifs = [NSArray arrayWithObjects:first, second, third, fourth, fifth, sixth, seventh, nil];
+    
+    for (NSArray *notif in notifs) {
+        UILocalNotification *localNotifications = [[UILocalNotification alloc] init];
+        localNotifications.fireDate = [NSDate dateWithTimeIntervalSinceNow:[[notif objectAtIndex:0] intValue]];
+        localNotifications.alertBody = [notif objectAtIndex:1];
+        localNotifications.alertAction = @"View";
+        localNotifications.soundName = UILocalNotificationDefaultSoundName;
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotifications];
+        [localNotifications release];
+    }
 }
 
 + (void)unscheduleNotifications
